@@ -1,0 +1,21 @@
+.up {
+  position: fixed;
+  bottom: 10px;
+  right: -40px;
+  background-color: $mainColor;
+  color: $colorBlue;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: $transition;
+
+  img {
+    width: 25px;
+  }
+
+}
+
+.up.active {
+  right: 15px;
+
+}

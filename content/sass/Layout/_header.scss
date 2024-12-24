@@ -1,0 +1,131 @@
+.header {
+  .upper-bar {
+    background-color: $mainColor;
+    padding: 15px 0;
+
+    .wrapper {
+      .info,
+      .social-links {
+        @include displayFlex(
+          $direction: row,
+          $align: center,
+          $justify: flex-start
+        );
+        gap: 5px 15px;
+
+        a {
+          @include displayFlex(
+            $direction: row,
+            $align: center,
+            $justify: flex-start
+          );
+          gap: 5px;
+          font-size: clamp(16px, 16px, 20px);
+        }
+
+        .social-link {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .navbar {
+    padding: 15px 0;
+    background-color: $backgroundColor;
+
+    .wrapper {
+      width: 100%;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        span {
+          font-size: clamp(16px, 20px, 20px);
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+      }
+
+      .right-side {
+        @include displayFlex();
+        gap: 20px 50px;
+        .mobile-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          border-bottom: 1px solid #ced0d1;
+          padding: 15px;
+          display: none;
+          .menu-close-btn {
+            font-size: 36px;
+            color: $colorBlue;
+          }
+        }
+
+        .navbar-links {
+          @include displayFlex();
+
+          li {
+            color: $colorBlue;
+            font-weight: bold;
+            font-size: clamp(16px, 16px, 18px);
+            transition: $transition;
+            position: relative;
+            padding: 10px 0;
+            &::after {
+              position: absolute;
+              inset-inline-start: 0px;
+              bottom: 0;
+              content: "";
+              width: 0;
+              height: 3px;
+              background-color: #002147;
+              -webkit-transition: 0.3s;
+              transition: 0.3s;
+            }
+            &:hover {
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .icons {
+          @include displayFlex($align: stretch);
+
+          .search-btn {
+            width: 40px;
+            height: inherit;
+            aspect-ratio: 1 / 1;
+            background-color: #fff;
+            border: 1px solid #bdbdbd;
+            border-radius: 6px;
+            // padding: 10px;
+            @include displayFlex(
+              $direction: row,
+              $align: center,
+              $justify: center
+            );
+          }
+        }
+      }
+      .toggle-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 23px;
+        display: none;
+        span {
+          background-color: $colorBlue;
+          width: 100%;
+          height: 3px;
+        }
+      }
+    }
+  }
+}

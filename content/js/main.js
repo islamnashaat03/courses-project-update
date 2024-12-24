@@ -4,12 +4,16 @@ $(document).ready(function () {
   $(".search-btn").click(function () {
     $("#searchDiv").addClass("active");
   });
-  $(".search-form__close-btn").click(function () {
+  $(".close-btn").click(function () {
     $("#searchDiv").removeClass("active");
   });
   // END  SEARCH DIV IN NAV BAR
-  $("#icon-nav").click(function () {
-    $(this).toggleClass("open");
+  $(".toggle-btn").click(function () {
+    $(".header .navbar .wrapper .right-side").toggleClass("active");
+  });
+  $(".menu-close-btn").click(function () {
+    if ($(".header .navbar .wrapper .right-side").hasClass("active"))
+      $(".header .navbar .wrapper .right-side").removeClass("active");
   });
 
   // START COLLAPSE  IN FOOTER
@@ -20,12 +24,10 @@ $(document).ready(function () {
   }
   // END COLLPASE IN FOOTER
 
- 
-
   // ===================START HOME PAGE=================================
   if ($(".home-page").length > 0) {
     // START TIMER
-    var countDownDate = new Date("dec 12, 2021 12:00:00").getTime(),
+    var countDownDate = new Date("march 15, 2025 12:00:00").getTime(),
       myfunc = setInterval(function () {
         var now = new Date().getTime(),
           timeleft = countDownDate - now,
@@ -36,17 +38,21 @@ $(document).ready(function () {
           minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)),
           seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerHTML = days < 10 ? `0${days} ` : days;
-        document.getElementById("hours").innerHTML = hours < 10 ? `0${hours} ` : hours;
-        document.getElementById("mins").innerHTML = minutes < 10 ? `0${minutes} ` : minutes;
-        document.getElementById("secs").innerHTML = seconds < 10 ? `0${seconds} ` : seconds;
+        document.getElementById("days").innerHTML =
+          days < 10 ? `0${days} ` : days;
+        document.getElementById("hours").innerHTML =
+          hours < 10 ? `0${hours} ` : hours;
+        document.getElementById("minutes").innerHTML =
+          minutes < 10 ? `0${minutes} ` : minutes;
+        document.getElementById("seconds").innerHTML =
+          seconds < 10 ? `0${seconds} ` : seconds;
 
         if (timeleft < 0) {
           clearInterval(myfunc);
           document.getElementById("days").innerHTML = "";
           document.getElementById("hours").innerHTML = "";
-          document.getElementById("mins").innerHTML = "";
-          document.getElementById("secs").innerHTML = "";
+          document.getElementById("minutes").innerHTML = "";
+          document.getElementById("seconds").innerHTML = "";
           document.getElementById("timer").style.display = "none";
           document.getElementById("end").innerHTML = "Sorry The Offer End!!";
           // document.getElementById("timerEnds").remove();
@@ -122,24 +128,24 @@ $(document).ready(function () {
     });
     // END VALIDATION IN SUBSCRIBE SECTION
 
-     // START SCROLL TO TOP BUTTON
-  if (window.matchMedia('(min-width:992px)').matches){
-    let span = document.querySelector(".up");
-    window.onscroll = () => {
-      if (scrollY >= 800) {
-        span.classList.add("active");
-      } else {
-        span.classList.remove("active");
-      }
-    };
-    span.onclick = () => {
-      window.scrollTo({
-        top:0,
-        behavior:"smooth",
-      })
+    // START SCROLL TO TOP BUTTON
+    if (window.matchMedia("(min-width:992px)").matches) {
+      let span = document.querySelector(".up");
+      window.onscroll = () => {
+        if (scrollY >= 800) {
+          span.classList.add("active");
+        } else {
+          span.classList.remove("active");
+        }
+      };
+      span.onclick = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
     }
-  }
-  // END SCROLL TO TOP BUTTON
+    // END SCROLL TO TOP BUTTON
   }
 
   // ===================END HOME PAGE===================================

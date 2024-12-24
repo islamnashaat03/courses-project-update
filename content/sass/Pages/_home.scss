@@ -1,0 +1,49 @@
+.home-page {
+  .main-header {
+    background-color: $backgroundColor;
+    padding-bottom: 200px;
+    .info {
+      @include displayFlex($direction: column, $align: flex-start);
+
+      .title {
+        font-size: clamp(20px, 5vw, 36px);
+        font-weight: bold;
+        color: $colorBlue;
+      }
+      .brief {
+        font-size: clamp(22px, 8vw, 66px);
+        font-weight: 500;
+        font-family: $georgiaFont;
+        color: $colorBlue;
+        line-height: 1.4;
+      }
+      .buttons {
+        @include displayFlex();
+        flex-wrap: wrap;
+        .main-btn {
+          min-width: 220px;
+          padding: 15px 0;
+        }
+      }
+    }
+  }
+
+  .offer-section {
+    padding: 0;
+    margin-top: -130px;
+    .wrapper {
+      background-color: $colorBlue;
+      border-radius: 25px;
+      color: #fff;
+      padding: 50px 20px;
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .counter .countdown {
+        @include displayFlex($align: center);
+      }
+    }
+  }
+}

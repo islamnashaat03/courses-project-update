@@ -1,0 +1,56 @@
+.search-fixed-div {
+  background-color: #eee;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  padding: 100px 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition;
+
+  top: 48px;
+
+  .search-form {
+    background-color: #eee;
+    position: relative;
+
+    .input {
+      width: 100%;
+      padding: 20px;
+      outline: 0;
+      border: 2px solid #eee;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+
+    .submit-btn {
+      position: absolute;
+      inset-inline-end: 10px;
+      top: 50%;
+      font-size: 20px;
+      border: 0;
+      outline: 0;
+      color: $colorBlue;
+      transform: translate(0, -50%);
+      background-color: transparent;
+    }
+
+    .close-btn {
+      position: absolute;
+      inset-inline-end: 20px;
+      top: -70px;
+      font-size: 35px;
+      border: 0;
+      outline: 0;
+      color: $colorBlue;
+    }
+  }
+}
+
+.search-fixed-div.active {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transition: $transition;
+}

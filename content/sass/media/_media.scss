@@ -57,6 +57,11 @@
   .header .navbar .wrapper {
     justify-content: space-between;
   }
+  .home-page .main-header .info .buttons {
+    flex-wrap: nowrap;
+
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 480px) {

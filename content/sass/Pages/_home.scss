@@ -21,7 +21,7 @@
         @include displayFlex();
         flex-wrap: wrap;
         .main-btn {
-          min-width: 220px;
+          min-width: clamp(130px, 15vw, 200px);
           padding: 15px 0;
         }
       }
@@ -36,14 +36,42 @@
       border-radius: 25px;
       color: #fff;
       padding: 50px 20px;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
       .info {
         display: flex;
         align-items: center;
         gap: 15px;
+        flex-wrap: wrap;
+        font-size: 20px;
+        span {
+          color: $mainColor;
+        }
       }
       .counter .countdown {
         @include displayFlex($align: center);
+        gap: 30px;
+        .box {
+          font-size: clamp(14px, 4vw, 35px);
+          text-align: center;
+          .number {
+            font-weight: bold;
+          }
+        }
       }
+    }
+  }
+
+  .top-courses {
+    .head {
+      font-size: 34px;
+      text-align: center;
+      margin: 0 auto 30px;
+      font-weight: bold;
+    }
+    .col--edit {
+      margin-bottom: 30px;
     }
   }
 }

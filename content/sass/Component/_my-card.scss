@@ -1,0 +1,42 @@
+.my-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 100%;
+  padding-bottom: 15px;
+  position: relative;
+  transition: $transition;
+  .outer {
+    position: relative;
+    height: 250px;
+    margin-bottom: 30px;
+    > img {
+      aspect-ratio: 16 / 9;
+    }
+    .small-img {
+      position: absolute;
+      bottom: -35px;
+      inset-inline-start: 15px;
+      background-color: #f0f4f9;
+      padding: 5px;
+    }
+  }
+  .body {
+    padding: 15px;
+    .title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  .overlay {
+    background-color: transparent;
+  }
+  &:hover {
+    transform: translateY(-10px);
+  }
+}

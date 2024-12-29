@@ -454,9 +454,15 @@ section {
   border-radius: 4px;
   cursor: pointer;
   transition: 0.5s all ease-in-out;
+  z-index: 9999999;
+  width: 40px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.up img {
-  width: 25px;
+.up i {
+  font-size: 25px;
 }
 
 .up.active {
@@ -549,7 +555,7 @@ section {
   flex-wrap: wrap;
 }
 .home-page .main-header .info .buttons .main-btn {
-  min-width: 220px;
+  min-width: clamp(130px, 15vw, 200px);
   padding: 15px 0;
 }
 .home-page .offer-section {
@@ -561,11 +567,19 @@ section {
   border-radius: 25px;
   color: #fff;
   padding: 50px 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .home-page .offer-section .wrapper .info {
   display: flex;
   align-items: center;
   gap: 15px;
+  flex-wrap: wrap;
+  font-size: 20px;
+}
+.home-page .offer-section .wrapper .info span {
+  color: #fdc800;
 }
 .home-page .offer-section .wrapper .counter .countdown {
   display: flex;
@@ -574,6 +588,66 @@ section {
   justify-content: flex-start;
   flex-wrap: nowrap;
   gap: 20px;
+  gap: 30px;
+}
+.home-page .offer-section .wrapper .counter .countdown .box {
+  font-size: clamp(14px, 4vw, 35px);
+  text-align: center;
+}
+.home-page .offer-section .wrapper .counter .countdown .box .number {
+  font-weight: bold;
+}
+.home-page .top-courses .head {
+  font-size: 34px;
+  text-align: center;
+  margin: 0 auto 30px;
+  font-weight: bold;
+}
+.home-page .top-courses .col--edit {
+  margin-bottom: 30px;
+}
+
+.my-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 100%;
+  padding-bottom: 15px;
+  position: relative;
+  transition: 0.5s all ease-in-out;
+}
+.my-card .outer {
+  position: relative;
+  height: 250px;
+  margin-bottom: 30px;
+}
+.my-card .outer > img {
+  aspect-ratio: 16/9;
+}
+.my-card .outer .small-img {
+  position: absolute;
+  bottom: -35px;
+  inset-inline-start: 15px;
+  background-color: #f0f4f9;
+  padding: 5px;
+}
+.my-card .body {
+  padding: 15px;
+}
+.my-card .body .title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.my-card .body p {
+  font-size: 16px;
+}
+.my-card .overlay {
+  background-color: transparent;
+}
+.my-card:hover {
+  transform: translateY(-10px);
 }
 
 @media only screen and (max-width: 991px) {
@@ -624,5 +698,9 @@ section {
   }
   .header .navbar .wrapper {
     justify-content: space-between;
+  }
+  .home-page .main-header .info .buttons {
+    flex-wrap: nowrap;
+    width: 100%;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -74,4 +74,80 @@
       margin-bottom: 30px;
     }
   }
+
+  .students {
+    .images {
+      position: relative;
+      margin-top: 30px;
+      margin-inline-start: 30px;
+      .main-img {
+        width: 100%;
+        height: 100%;
+        margin-inline-start: auto;
+        margin-block-start: auto;
+        display: block;
+      }
+      .top-left-img {
+        position: absolute;
+        top: -30px;
+        left: -30px;
+      }
+      .bottom-text {
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        width: 70%;
+        text-align: center;
+        font-size: 20px;
+        color: $colorBlue;
+        font-weight: bold;
+        transform: translateX(-50%);
+        background-color: #fff;
+        padding: 15px 35px;
+        box-shadow: 0 0 3px #00000026;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .head1 {
+          font-size: 24px;
+        }
+        .head2 {
+          font-weight: normal;
+          color: #757575;
+        }
+      }
+    }
+    .brief {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 100%;
+      justify-content: space-between;
+      .main-head {
+        font-size: clamp(20px, 5vw, 60px);
+        color: $colorBlue;
+        font-family: $georgiaFont;
+        margin-top: 30px;
+        span {
+          color: $mainColor;
+        }
+      }
+      .sec-head {
+        font-size: 16px;
+        line-height: 1.5;
+        color: $colorBlue;
+      }
+      .paragraph {
+        color: #212529;
+        line-height: 1.6;
+      }
+      .card {
+        @include displayFlex();
+        gap: 0;
+        .img {
+          flex: 0 0 25%;
+        }
+      }
+    }
+  }
 }
